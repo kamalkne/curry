@@ -8,9 +8,10 @@ var curry = function(fn) {
     var result = 0;
     var rFn;
     var that = fn;
+    var len = that.length;
     rFn = function() {
         args = args.concat(Array.prototype.slice.call(arguments));
-        if (args.length === that.length) {
+        if (args.length === len) {
             that.apply(window, args);
         } else {
             return rFn;
